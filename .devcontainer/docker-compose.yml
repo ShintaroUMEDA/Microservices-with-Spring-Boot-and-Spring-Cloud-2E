@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  spring-microservice:
+    container_name: spring-microservice
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/app:cached
+    ports:
+      - 7000:7000
+      - 7001:7001
+    working_dir: /app
+    tty: true

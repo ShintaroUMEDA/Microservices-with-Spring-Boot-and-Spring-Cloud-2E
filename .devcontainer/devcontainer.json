@@ -1,0 +1,20 @@
+{
+    "name": "microservice",
+    "dockerComposeFile": ["./docker-compose.yml"],
+    "service": "spring-microservice",
+    "workspaceFolder": "/app",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    // Mount ~/.aws directory for AWS Amplify CLI and AWS CLI access
+	// "mounts": [
+	// 	"source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/root/.aws,type=bind,consistency=cached"
+	// ],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "npm install -g @aws-amplify/cli",
+
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "dev-user"
+    
+}
