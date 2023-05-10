@@ -84,6 +84,6 @@ product-composite:
   envFromSecretRefs:
     - rabbitmq-credentials
 
-zipkin-server:
-  envFromSecretRefs:
-    - rabbitmq-zipkin-credentials
+#zipkin-server:
+#  envFromSecretRefs:
+#    - rabbitmq-zipkin-credentials

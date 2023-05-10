@@ -1,6 +1,8 @@
 server.port: 7002
 server.error.include-message: always
 
+spring.application.name: recommendation
+
 spring.data.mongodb:
   host: localhost
   port: 27017
@@ -32,6 +34,9 @@ logging:
     root: INFO
     se.magnus: DEBUG
     org.springframework.data.mongodb.core.ReactiveMongoTemplate: DEBUG
+    org.apache.kafka.clients.consumer.internals.ConsumerCoordinator: WARN
+    org.apache.kafka.clients.admin.AdminClientConfig: WARN
+    org.apache.kafka.clients.consumer.ConsumerConfig: WARN
 
 ---
 spring.config.activate.on-profile: docker

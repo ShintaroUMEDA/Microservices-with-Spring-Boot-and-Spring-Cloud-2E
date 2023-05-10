@@ -8,7 +8,8 @@ image:
 
 env:
   STORAGE_TYPE: mem
-  RABBIT_ADDRESSES: rabbitmq
+  # RABBIT_ADDRESSES: rabbitmq
+  KAFKA_BOOTSTRAP_SERVERS: kafka:9092
 
 ports:
   - containerPort: 9411

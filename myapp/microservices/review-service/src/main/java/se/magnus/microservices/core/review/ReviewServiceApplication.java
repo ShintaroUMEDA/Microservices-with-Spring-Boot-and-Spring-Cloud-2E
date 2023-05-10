@@ -9,9 +9,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.nativex.hint.FieldHint;
+import org.springframework.nativex.hint.TypeHint;
+import org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean;
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
+import se.magnus.api.event.Event;
 
+@TypeHint(types = OptionalValidatorFactoryBean.class)
+@TypeHint(types = Event.class, fields = {
+  @FieldHint(name = "eventType", allowWrite = true),
+  @FieldHint(name = "key", allowWrite = true),
+  @FieldHint(name = "data", allowWrite = true),
+  @FieldHint(name = "eventCreatedAt", allowWrite = true)
+})
 @SpringBootApplication
 @ComponentScan("se.magnus")
 public class ReviewServiceApplication {

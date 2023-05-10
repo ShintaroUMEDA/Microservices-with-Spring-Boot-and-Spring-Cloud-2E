@@ -30,4 +30,4 @@ dependencies:
   repository: file://../../components/zipkin-server
   version: 1.0.0
 digest: sha256:64edfd68e793c98678d1219f6f781039e252f227a9efe70ea6043fec6bf54082
-generated: "2021-04-30T14:27:49.266233+02:00"
+generated: "2023-05-10T14:16:24.834555425+09:00"

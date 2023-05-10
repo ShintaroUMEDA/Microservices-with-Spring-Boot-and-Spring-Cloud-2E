@@ -80,6 +80,8 @@ api:
 server.port: 7000
 server.error.include-message: always
 
+spring.application.name: product-composite
+
 spring.cloud.stream:
   default.contentType: application/json
   bindings:
@@ -109,7 +111,7 @@ resilience4j.retry:
       maxAttempts: 3
       waitDuration: 1000
       retryExceptions:
-      - org.springframework.web.reactive.function.client.WebClientResponseException$InternalServerError
+        - org.springframework.web.reactive.function.client.WebClientResponseException$InternalServerError
 
 management.health.circuitbreakers.enabled: true
 
@@ -133,6 +135,10 @@ logging:
     root: INFO
     se.magnus: DEBUG
     org.springframework.web.server.adapter.HttpWebHandlerAdapter: TRACE
+    org.apache.kafka.clients.consumer.internals.ConsumerCoordinator: WARN
+    org.apache.kafka.clients.admin.AdminClientConfig: WARN
+    org.apache.kafka.clients.consumer.ConsumerConfig: WARN
+    org.apache.kafka.clients.producer.ProducerConfig: WARN
 
 ---
 spring.config.activate.on-profile: docker

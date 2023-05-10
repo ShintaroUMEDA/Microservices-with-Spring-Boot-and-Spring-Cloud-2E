@@ -39,7 +39,7 @@ import se.magnus.api.event.Event;
   properties = {
     "spring.security.oauth2.resourceserver.jwt.issuer-uri=",
     "spring.main.allow-bean-definition-overriding=true",
-    "spring.cloud.stream.defaultBinder=rabbit"})
+    "spring.cloud.stream.defaultBinder=kafka"})
 @Import({TestChannelBinderConfiguration.class})
 class MessagingTests {
 

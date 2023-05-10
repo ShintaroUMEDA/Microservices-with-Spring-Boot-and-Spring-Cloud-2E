@@ -16,8 +16,19 @@ import org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexRes
 import org.springframework.data.mongodb.core.index.ReactiveIndexOperations;
 import org.springframework.data.mongodb.core.mapping.MongoPersistentEntity;
 import org.springframework.data.mongodb.core.mapping.MongoPersistentProperty;
+import org.springframework.nativex.hint.FieldHint;
+import org.springframework.nativex.hint.TypeHint;
+import org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean;
+import se.magnus.api.event.Event;
 import se.magnus.microservices.core.recommendation.persistence.RecommendationEntity;
 
+@TypeHint(types = OptionalValidatorFactoryBean.class)
+@TypeHint(types = Event.class, fields = {
+  @FieldHint(name = "eventType", allowWrite = true),
+  @FieldHint(name = "key", allowWrite = true),
+  @FieldHint(name = "data", allowWrite = true),
+  @FieldHint(name = "eventCreatedAt", allowWrite = true)
+})
 @SpringBootApplication
 @ComponentScan("se.magnus")
 public class RecommendationServiceApplication {
